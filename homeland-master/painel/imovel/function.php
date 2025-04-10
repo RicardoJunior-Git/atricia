@@ -1,5 +1,5 @@
 <?php  
-	function CadastrarEquipe($usuario, $email, $senha, $tipoUsuario, $pagina){
+	function CadastrarImovel($usuario, $email, $senha, $tipoUsuario, $pagina){
 		global $con;
 		$sql = 'insert into tb_usuario set
 				nm_usuario = ?,
@@ -7,6 +7,15 @@
 				cd_senha = sha2(?, 256), 
 				id_tipo_usuario = ?';
 		$res = $con->prepare($sql);
+		
+		global $con;
+		$sql = 'insert into tb_imovel set
+				nm_endereço = ?,
+				nr_Imovel = ?,
+				cd_senha = sha2(?, 256), 
+				id_tipo_usuario = ?';
+		$res = $con->prepare($sql);
+
 		if($res===false){
 			$res->close();
 			Erro("erro ao preparar instrução");
