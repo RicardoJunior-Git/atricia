@@ -17,9 +17,9 @@
           Imoveis
         </button>
         <div class="dropdown-menu">
-          <a class="dropdown-item" href="tipo_usuario.php">Imoveis</a>
+          <a class="dropdown-item" href="tipo_imovel.php">Tipo de Imovel</a>
           <a class="dropdown-item" href="equipe.php">Imoveis</a>
-          <a class="dropdown-item" href="#">Imoveis</a>
+          <a class="dropdown-item" href="#">...</a>
         </div>
       </div>
 
