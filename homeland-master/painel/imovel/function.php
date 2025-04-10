@@ -3,8 +3,8 @@
 	$cd_postal, $id_tipo_imovel, $qt_suite, $qt_sala_estar, $qt_quarto, $qt_banheiro, $qt_lavabo, 
 	$qt_vaga_garagem, $qt_sala_jantar, $qt_cozinha, $ic_area_externa, $ic_piscina, $ic_edicula, $ic_churrasqueira,
 	$ds_imovel, $id_proprietario, $dt_registro_imovel, $id_usuario_registro,
-	$cd_senha, $id_tipo_usuario){
-		global $con;
+	$cd_senha, $id_tipo_usuario, $pagina){
+		global $con;	
 		$sql = 'insert into tb_imovel set
 				nm_endereço 		= ?,
 				nr_Imovel			= ?,
