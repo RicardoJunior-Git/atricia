@@ -35,17 +35,21 @@
 			$res->close();
 			Erro("erro ao preparar instrução");
 		}
-		if(!$res->bind_param('sssi', $usuario, $email, $senha, $tipoUsuario)){
+		if(!$res->bind_param('sssi', $nm_endereço, $nr_Imovel, $ds_complemento, $nm_bairro, $id_cidade, 
+		$cd_postal, $id_tipo_imovel, $qt_suite, $qt_sala_estar, $qt_quarto, $qt_banheiro, $qt_lavabo, 
+		$qt_vaga_garagem, $qt_sala_jantar, $qt_cozinha, $ic_area_externa, $ic_piscina, $ic_edicula, $ic_churrasqueira,
+		$ds_imovel, $id_proprietario, $dt_registro_imovel, $id_usuario_registro,
+		$cd_senha, $id_tipo_usuario )){
 			$res->close();
 			Erro("erro ao receber parâmetros!");
 		}
 		if($res->execute()){
 			$res->close();
-			Confirma("Usuário cadastrado com sucesso!", $pagina);
+			Confirma("Imovel cadastrado com sucesso!", $pagina);
 		}
 		else{
 			$res->close();
-			Erro("Usuário não cadastrado!");
+			Erro("Imovel não cadastrado!");
 		}
 	}
 
@@ -179,29 +183,30 @@
 	}
 
 
-	// Functions para o tipo de usuário //
+	// // Functions para o tipo de usuário 
 
-	function CadastrarTipoIomvel($tipoImovel, $pagina){
-		global $con;
-		$sql = 'insert into tb_tipo_imovel set nm_tipo_imovel = ?';
-		$res = $con->prepare($sql);
-		if($res === false){
-			$res->close();
-			Erro("Erro ao preparar a instrução para cadastrar o tipo de imovel!");
-		}
-		if(!$res->bind_param('s', $tipoImovel)){
-			$res->close();
-			Erro("Erro ao vincular os parâmetros para adicionar um novo tipo de imovel!");
-		}
-		if($res->execute()){
-			$res->close();
-			Confirma("Novo tipo de imovel adicionado!", $pagina);
-		} else {
-			$res->close();
-			Erro("Não houve uma adição de tipo de imovel!");
-		}
+	// function CadastrarTipoIomvel($tipoImovel, $pagina){
+	// 	global $con;
+	// 	$sql = 'insert into tb_tipo_imovel set nm_tipo_imovel = ?';
+	// 	$res = $con->prepare($sql);
+	// 	if($res === false){
+	// 		$res->close();
+	// 		Erro("Erro ao preparar a instrução para cadastrar o tipo de imovel!");
+	// 	}
+	// 	if(!$res->bind_param('s', $tipoImovel)){
+	// 		$res->close();
+	// 		Erro("Erro ao vincular os parâmetros para adicionar um novo tipo de imovel!");
+	// 	}
+	// 	if($res->execute()){
+	// 		$res->close();
+	// 		Confirma("Novo tipo de imovel adicionado!", $pagina);
+	// 	} else {
+	// 		$res->close();
+	// 		Erro("Não houve uma adição de tipo de imovel!");
+	// 	}
 
-	}
+	// }
+
 
 	function AlterarTipoImovel($id, $novoTipo, $pagina){
 		global $con;
